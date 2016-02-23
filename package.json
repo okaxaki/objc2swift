@@ -1,0 +1,43 @@
+{
+  "name": "objc2swift",
+  "version": "0.1.0",
+  "description": "Objective-C to Swift Converter",
+  "main": "src/main.js",
+  "bin": {
+    "objc2swift": "bin/cmd.js"
+  },
+  "dependencies": {
+    "fs-extra": "^0.26.5",
+    "glob": "^6.0.4",
+    "node-getopt": "^0.2.3"
+  },
+  "devDependencies": {
+    "diff": "^2.2.1",
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "object-assign": "^4.0.1",
+    "open": "0.0.5",
+    "pegjs": "^0.9.0",
+    "through2": "^2.0.0",
+    "webpack-stream": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pegjs",
+    "objective-c",
+    "objectivec",
+    "objc",
+    "swift"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okaxaki/objc2swift"
+  },
+  "homepage": "http://okaxaki.github.io/objc2swift/",
+  "author": "Mitsutaka Okazaki",
+  "license": "ISC"
+}
