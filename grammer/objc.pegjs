@@ -2,6 +2,9 @@
  * Objective-C Grammer for PEG.js
  * ==============================
  *
+ * If you would like to reuse this grammer, [pegjs-strip](https://github.com/okaxaki/pegjs-strip) 
+ * may be useful. It can eliminate JavaScript-related things from the grammer.
+ *
  * This grammer is based on ANTLR's C.g4 and ObjC.g4 with many fixes. Notable changes are:
  *
  * - Accept parameterized type like `NSObject<T>` as class and category name.
@@ -16,6 +19,7 @@
  * - Recognize `;` after `@end`.
  * - Refactor the structure of the grammer around type specifiers and qualifiers.
  * - Support `extern "C"` block.
+ *
  */
 {
   var util = require('util');
