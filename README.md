@@ -14,7 +14,7 @@ However, the most of Objective-C code can be converted to proper Swift code with
 - Command-line version supports `#import` delective with pre-compiled header cache.
 
 [PEG.js]: http://www.pegjs.org/
-[Live Demo]: http://okaxaki.github.io/objc2swift/
+[Live Demo]: http://okaxaki.github.io/objc2swift/demo.html
 
 ## Install
 
