@@ -1,4 +1,4 @@
-# Objc2Swift.js
+# Objc2Swift.js [![npm version](https://badge.fury.io/js/objc2swift.svg)](https://badge.fury.io/js/objc2swift)
 
 Objc2Swift.js is an Objective-C to Swift converter written in JavaScript. ([Live Demo][])
 
