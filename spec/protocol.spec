@@ -1,4 +1,4 @@
-# Prorotol
+# Protocol
 
 ## Protocol Declaration
 

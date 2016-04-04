@@ -162,6 +162,7 @@ pre.diff {display:block;}
       <li><a href="../index.html">Home</a></li>
         <li><a href="../demo.html">Live Demo</a></li>
         <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
       </ul>
     </nav>
 </section>
