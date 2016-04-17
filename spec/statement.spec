@@ -25,7 +25,7 @@ class Foo {
 }
 ```
 
-## Swifth Statement
+## Switch Statement
 ```
 @implementation Foo
 -(NSString *)method {
@@ -56,7 +56,7 @@ class Foo {
 }
 ```
 
-## Swifth Statement (sequential cases)
+## Switch Statement (sequential cases)
 ```
 @implementation Foo
 -(NSString *)method {
