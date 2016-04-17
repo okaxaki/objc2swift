@@ -30,7 +30,7 @@ if(!opt.options.outdir || opt.argv.length == 0) {
 }
 
 if(!fs.existsSync(opt.options.outdir)) {
-	console.error(opt.options.outdir + "does not exist.");
+	console.error(opt.options.outdir + " does not exist.");
 	process.exit(1);
 }
 
