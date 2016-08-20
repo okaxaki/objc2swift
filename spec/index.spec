@@ -1,6 +1,6 @@
 # Overview
 
-<p>This document extensivly describes the conversion specification by enumerating conversion patterns. All sections are generated automatically from <a href="https://github.com/okaxaki/objc2swift/tree/master/spec">Test Spec</a> of Objc2Swift.js.</p>
+<p>This document describes the conversion specification by enumerating conversion patterns. All sections are generated automatically from <a href="https://github.com/okaxaki/objc2swift/tree/master/spec">Test Spec</a> of Objc2Swift.js.</p>
 <p>Each section consists of a Objective-C code fragment and its corresponding Swift code like following.</p>
 
 ## Example Pattern
