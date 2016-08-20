@@ -1,6 +1,6 @@
 {
   "name": "objc2swift",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Objective-C to Swift Converter",
   "main": "src/main.js",
   "bin": {
@@ -19,7 +19,7 @@
     "gulp-util": "^3.0.7",
     "object-assign": "^4.0.1",
     "open": "0.0.5",
-    "pegjs": "^0.9.0",
+    "pegjs": "^0.10.0",
     "through2": "^2.0.0",
     "webpack-stream": "^3.1.0"
   },
