@@ -191,7 +191,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("convert").addEventListener("click",doConvert);
 
-  retrieve("https://github.com/okaxaki/objc2swift/blob/gh-pages/example/hello-world.m", function(){    
+  retrieve("https://github.com/okaxaki/objc2swift/blob/master/docs/example/hello-world.m", function(){    
   });
 
 });
