@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objc2Swift.js - Document</title>
+<meta property="og:type" content="website"/>
+<meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+<meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+<meta property="og:title" content="Objc2Swift.js">
+<meta property="og:site_name" content="Objc2Swift.js">
+<meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+<script src="common.js"></script>
+<style>
+pre.diff {color:grey;}
+pre code {background-color:#f0f0f0;}
+.added {background-color:#c0f0c0;}
+.removed {text-decoration:line-through;color:red;}
+.stack-trace {font-size:80%;color:#666;}
+pre.output {display:none;}
+pre.expect {display:none;}
+pre.diff {display:block;}
+.tab-items {margin-top:1em;}
+.tab-items a {margin:0.25em;padding:0.25em;color:grey;cursor:pointer;}
+.tab-items a.selected {color:#007aff;border-bottom:2px solid #007aff;}
+</style>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="page-header">
+    <nav class="root-nav">
+      <ul>
+      <li><a href="../index.html">Home</a></li>
+        <li><a href="../demo.html">Live Demo</a></li>
+        <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
+      </ul>
+    </nav>
+</section>
+<div class="sidebar"><div class="menu"></div></div>
+<div class="content">
+
+
+<h1>Class and Category</h1>
+<h2>Basic Class Definition</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@interface Foo
+@property int bar;
+-(void)method;
+@end
+
+@implementation Foo 
+-(void)method {
+    // do something
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo { 
+    var bar:Int
+
+    func method() {
+        // do something
+    }
+}
+</code></pre>
+
+<h2>Inheritance</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@interface Foo : Bar
+@end
+
+@implementation Foo
+// ...
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo : Bar {
+// ...
+}
+</code></pre>
+
+<h2>Anonymous Category</h2>
+<p>Properties declared in interface or anonymous category are converted into instance variables of a single class together.</p>
+<p>Properties from the anonymous category are treated as private.</p>
+
+<h3>Objective-C</h3><pre><code class='objc'>@interface Foo
+@property int bar;
+@end
+
+@interface Foo ()
+@property int baz;
+@end
+
+@implementation Foo 
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo { 
+    var bar:Int
+    private var baz:Int
+}
+</code></pre>
+
+</div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-74184843-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

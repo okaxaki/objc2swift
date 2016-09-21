@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objc2Swift.js - Document</title>
+<meta property="og:type" content="website"/>
+<meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+<meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+<meta property="og:title" content="Objc2Swift.js">
+<meta property="og:site_name" content="Objc2Swift.js">
+<meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+<script src="common.js"></script>
+<style>
+pre.diff {color:grey;}
+pre code {background-color:#f0f0f0;}
+.added {background-color:#c0f0c0;}
+.removed {text-decoration:line-through;color:red;}
+.stack-trace {font-size:80%;color:#666;}
+pre.output {display:none;}
+pre.expect {display:none;}
+pre.diff {display:block;}
+.tab-items {margin-top:1em;}
+.tab-items a {margin:0.25em;padding:0.25em;color:grey;cursor:pointer;}
+.tab-items a.selected {color:#007aff;border-bottom:2px solid #007aff;}
+</style>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="page-header">
+    <nav class="root-nav">
+      <ul>
+      <li><a href="../index.html">Home</a></li>
+        <li><a href="../demo.html">Live Demo</a></li>
+        <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
+      </ul>
+    </nav>
+</section>
+<div class="sidebar"><div class="menu"></div></div>
+<div class="content">
+
+
+<h1>Optional Type</h1>
+<h2>Nullability Qualifier</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation A
+-(void)someMethod:(NSString *)arg1 :(nonnull NSString *)arg2 :(nullable NSString *)arg3 {
+    //...
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class A {
+    func someMethod(arg1:String!, arg2:String, arg3:String?) {
+        //...
+    }
+}
+</code></pre>
+
+<h2>Auto-unwrapping</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation A
+-(void)someMethod:(nullable NSString *)str {
+    NSLog(@"%l",[str length]);
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class A {
+    func someMethod(str:String?) {
+        NSLog("%l",str!.length())
+    }
+}
+</code></pre>
+
+<h2>Nullability Annotation</h2>
+<h3>Objective-C</h3><pre><code class='objc'>NS_ASSUME_NONNULL_BEGIN
+@interface AAPLList : NSObject 
+// ...
+- (nullable AAPLListItem *)itemWithName:(NSString *)name;
+- (NSInteger)indexOfItem:(AAPLListItem *)item;
+
+@property (copy, nullable) NSString *name;
+@property (copy, readonly) NSArray *allItems;
+// ...
+@end
+NS_ASSUME_NONNULL_END
+
+@implementation AAPLList
+- (nullable AAPLListItem *)itemWithName:(NSString *)name {
+	// ...
+}
+
+- (NSInteger)indexOfItem:(AAPLListItem *)item {
+    // ...	
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class AAPLList : NSObject {
+    @NSCopying var name:String?
+    @NSCopying private(set) var allItems:[AnyObject]
+
+    func itemWithName(name:String) -&gt; AAPLListItem? {
+    	// ...
+    }
+
+    func indexOfItem(item:AAPLListItem) -&gt; Int {
+        // ...	
+    }
+}
+</code></pre>
+
+</div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-74184843-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

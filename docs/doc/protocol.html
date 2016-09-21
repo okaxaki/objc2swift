@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objc2Swift.js - Document</title>
+<meta property="og:type" content="website"/>
+<meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+<meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+<meta property="og:title" content="Objc2Swift.js">
+<meta property="og:site_name" content="Objc2Swift.js">
+<meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+<script src="common.js"></script>
+<style>
+pre.diff {color:grey;}
+pre code {background-color:#f0f0f0;}
+.added {background-color:#c0f0c0;}
+.removed {text-decoration:line-through;color:red;}
+.stack-trace {font-size:80%;color:#666;}
+pre.output {display:none;}
+pre.expect {display:none;}
+pre.diff {display:block;}
+.tab-items {margin-top:1em;}
+.tab-items a {margin:0.25em;padding:0.25em;color:grey;cursor:pointer;}
+.tab-items a.selected {color:#007aff;border-bottom:2px solid #007aff;}
+</style>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="page-header">
+    <nav class="root-nav">
+      <ul>
+      <li><a href="../index.html">Home</a></li>
+        <li><a href="../demo.html">Live Demo</a></li>
+        <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
+      </ul>
+    </nav>
+</section>
+<div class="sidebar"><div class="menu"></div></div>
+<div class="content">
+
+
+<h1>Protocol</h1>
+<h2>Protocol Declaration</h2>
+Note the converter does not generate Swift protocol code if the protocol declaration is found in the imported header.
+If you would like to get Swift protocol code, pass the header file where the protocol is declared to the converter.
+
+<h3>Objective-C</h3><pre><code class='objc'>@protocol MyProtocol
+@property int property;
+@property (readonly) int readonlyProperty;
++(void)classMethod;
+-(void)method;
+@optional
+@property int optionalProperty;
+-(void)optionalClassMethod;
+-(void)optionalMethod;
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>protocol MyProtocol {
+    var property:Int { get set }
+    var readonlyProperty:Int { get }
+    class func classMethod()
+    func method()
+
+    optional var optionalProperty:Int { get set }
+    optional func optionalClassMethod()
+    optional func optionalMethod()
+}
+</code></pre>
+
+<h2>Protocol Reference</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@interface Foo : NSObject &lt;Bar, Baz&gt;
+@end
+
+@implementation Foo
+// ...
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo : NSObject, Bar, Baz {
+// ...
+}
+</code></pre>
+
+<h2>Protocol Name Confliction</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@interface Foo
+@end
+
+// Objective-C allows the same protocol name with 
+// the class but Swift doesn't. 
+// suffix `-Protocol` is added to the Swift 
+// protocol if name confliction is found.
+@protocol Foo 
+@end
+
+@protocol Bar
+@end
+
+@interface MyClass : Foo&lt;Foo,Bar&gt;
+@property Foo *oFoo;
+@property id&lt;Foo&gt; pFoo;
+@property id&lt;Bar&gt; pBar;
+@end
+
+@implementation MyClass 
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>// Objective-C allows the same protocol name with 
+// the class but Swift doesn't. 
+// suffix `-Protocol` is added to the Swift 
+// protocol if name confliction is found.
+
+
+class MyClass : Foo, FooProtocol, Bar { 
+    var oFoo:Foo!
+    var pFoo:FooProtocol!
+    var pBar:Bar!
+}
+</code></pre>
+
+</div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-74184843-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

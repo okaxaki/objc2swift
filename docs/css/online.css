@@ -1,0 +1,277 @@
+* {padding:0;margin:0;box-sizing:border-box;}
+html {
+  width:100%;height:100%;
+}
+
+button:focus {
+  outline:none;
+}
+
+.material-icons {
+  font-size:inherit;
+}
+
+body {
+  font-family:Helvetica, Arial, sans-serif;
+  background-color:#808080;
+  min-width:900px;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}
+
+a {
+  color:#3a76ff;
+  text-decoration: none;
+}
+
+section {
+    min-width:800px;
+}
+
+section.page-header {
+  position:relative;
+  width:100%;
+  color:#fff;
+  background-color:#3a76ff;
+  background-image: linear-gradient(120deg, #3a76ff, #155799);
+  padding:0 72px;
+  height:24px;
+  top:0;
+}
+
+nav.root-nav {
+  position:absolute;
+  left:72px;right:72px;
+  bottom:0;
+}
+
+.root-nav a {
+  cursor:pointer;
+  text-decoration: none;
+  color:white;
+  transition:opacity 0.15s linear;
+}
+
+.root-nav a:hover {
+  text-decoration: none;
+  opacity:0.5;
+}
+
+.root-nav ul {
+    margin-left:-8px;
+}
+
+.root-nav li {
+  display:inline-block;
+  font-size:12px;
+  padding:0 8px;
+  height:24px;
+  line-height:24px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.root-nav li.selected {
+  border-bottom:2px solid yellow;
+}
+
+section.toolbar {
+  position:absolute;  
+  height:44px;
+  width:100%;
+  background-color:#fafafa;
+  border-top:1px solid #fff;
+  border-bottom:1px solid #333;
+}
+
+section.toolbar .left:after {
+  content:'';
+  clear:both;
+}
+
+section.toolbar .left {
+  width:50%;
+  padding:4px 8px;
+}
+
+section.toolbar button {
+  min-width:56px;
+  height:32px;
+  font-size:12px;
+  line-height:22px;
+  border-radius: 2px;
+  background:none;
+  color:rgba(0,0,0,.84);
+  cursor: pointer;
+  padding:0 12px 0 8px;
+  margin:auto 0 auto 8px;
+  transition:0.25s all;
+  border:none;
+}
+
+section.toolbar button .material-icons {
+  font-size:20px;
+  margin-top:-1px;
+  vertical-align:middle;
+}
+
+section.toolbar button:hover {
+  background-color:#f0f0f0;
+}
+
+section.page-footer {
+  position:absolute;
+  width:100%;
+  bottom:0;
+  height:48px;
+  line-height:48px;
+  background-color:#555;
+  border-top:1px solid #888;
+  font-size:12px;
+  color:#fff;
+  font-weight:normal;
+  padding-left:20px;
+}
+
+section.page-header h1 {
+  position:relative;
+  left:16px;
+  font-weight:normal;
+  font-size:12px;
+  line-height:24px;
+  text-align:center;
+}
+
+section.content-wrap {
+  position:absolute;
+  top:0;bottom:0;left:0;right:0;
+  padding:80px 0 48px 0;
+}
+
+.content {
+  position:relative;
+  height:100%;
+  border-bottom:1px solid #444;
+}
+
+.content h3 {
+  font-size:10px;
+  line-height:24px;
+  font-weight:bold;
+  text-align:center;
+  width:120px;
+  background-color:#fff;
+  margin:4px 4px 0 8px;
+  border-radius:2px 2px 0 0;
+}
+
+.content .left {
+  width:50%;
+  height:100%;
+  float:left;
+}
+
+.content .right { 
+  width:50%;
+  height:100%;
+  float:left;
+}
+
+.clearfix {
+  content:'';
+  clear:both;
+}
+
+.editor-wrap {
+  position:relative;
+  width:100%;
+  height:100%;
+  padding-bottom:28px;
+}
+
+#editor, #viewer { 
+  width:100%;height:100%;
+  font-size:11px;
+}
+
+#modal-background {
+  position:absolute;
+  width:100%;height:100%;
+  background-color:rgba(0,0,0,.5);
+  z-index:998;
+  display:none;
+}
+
+#modal-stage {
+  position:absolute;
+  width:100%;height:100%;  
+  z-index:999;
+  display:none;
+}
+
+.dialog {
+  position:absolute;
+  padding:20px;
+  background-color:#555;
+  border-radius:2px;
+  border:1px solid #444;
+  margin:auto;
+  top:0px;left:0;right:0;bottom:120px;
+  box-shadow:0 2px 8px 0 rgba(0,0,0,0.25);
+  color:white;
+  font-size:12px;
+  line-height: 160%
+}
+
+.dialog h1 {
+  font-size:14px;
+  line-height:20px;
+  margin-bottom:12px;
+}
+
+.dialog .button-box {
+  margin:8px 0;
+}
+
+.dialog .button-box button {
+  float:right;
+}
+
+.dialog button {
+  margin:0 0 0 8px;
+  padding:0 8px;
+  line-height:36px;
+  font-size:14px;
+  color:white;
+  border:none;
+  background:none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.5s;
+  min-width:64px;
+}
+
+.dialog button:hover {
+  background-color:#3a76ff;
+}
+
+.dialog p {
+  margin:12px 0;
+}
+
+.dialog p a {
+  text-decoration: underline;
+  color:#f0f0f0;
+}
+
+#open-url-dialog {
+  width:640px;
+  height:160px;
+}
+
+#open-url-dialog input {
+  width:100%;
+  font-size:12px;
+  padding:4px 8px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objc2Swift.js - Document</title>
+<meta property="og:type" content="website"/>
+<meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+<meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+<meta property="og:title" content="Objc2Swift.js">
+<meta property="og:site_name" content="Objc2Swift.js">
+<meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+<script src="common.js"></script>
+<style>
+pre.diff {color:grey;}
+pre code {background-color:#f0f0f0;}
+.added {background-color:#c0f0c0;}
+.removed {text-decoration:line-through;color:red;}
+.stack-trace {font-size:80%;color:#666;}
+pre.output {display:none;}
+pre.expect {display:none;}
+pre.diff {display:block;}
+.tab-items {margin-top:1em;}
+.tab-items a {margin:0.25em;padding:0.25em;color:grey;cursor:pointer;}
+.tab-items a.selected {color:#007aff;border-bottom:2px solid #007aff;}
+</style>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="page-header">
+    <nav class="root-nav">
+      <ul>
+      <li><a href="../index.html">Home</a></li>
+        <li><a href="../demo.html">Live Demo</a></li>
+        <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
+      </ul>
+    </nav>
+</section>
+<div class="sidebar"><div class="menu"></div></div>
+<div class="content">
+
+
+<h1>Property</h1>
+<h2>Readonly Property</h2>
+<p>The property with <code>readonly</code> attribute is converted to a variable and its setter is set private.</p>
+<h3>Objective-C</h3><pre><code class='objc'>@interface MyClass 
+@property (readonly) NSString *str;
+@end
+
+@implementation MyClass
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class MyClass {
+    private(set) var str:String!
+}
+</code></pre>
+
+<h2>Copy Property</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@interface MyClass 
+@property (copy) NSString *str;
+@end
+
+@implementation MyClass
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class MyClass {
+    @NSCopying var str:String!
+}
+</code></pre>
+
+<h2>Private Property</h2>
+<p>The property declared in any anonymous category is converted into a private variable. Other properies are treated as public.</p>
+<h3>Objective-C</h3><pre><code class='objc'>@interface MyClass
+@property int bar;
+@end
+
+@interface MyClass ()
+@property int baz;
+@end
+
+@implementation MyClass 
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class MyClass { 
+    var bar:Int
+    private var baz:Int
+}
+</code></pre>
+
+<h2>Auto-synthesizing Aware</h2>
+<p>Objective-C automatically synthesizes instantce variable <code>_foo</code> for <code>@property</code> foo declaration. Objc2swift checks the reference of _foo in any instance method and if so, explicit setter and getter functions are generated for safe.
+
+<h3>Objective-C</h3><pre><code class='objc'>@interface MyClass 
+@property NSString *foo; // This property implicitly generates `_foo`.
+@end
+
+@implementation MyClass 
+-(void)someMethod {
+	NSLog("%@", _foo); // reference of auto-synthesized variable.
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class MyClass { 
+    private var _foo:String!
+    var foo:String! {
+        get { return _foo }
+        set { _foo = newValue }
+    }
+
+    func someMethod() {
+    	NSLog("%@", _foo) // reference of auto-synthesized variable.
+    }
+}
+</code></pre>
+
+<h2>Setter and Getter</h2>
+<p>If there are setter and getter code in the class implementation, they are converted into Swift's variables with setter and getter function.</p>
+
+<h3>Objective-C</h3><pre><code class='objc'>@interface MyClass
+@property int foo;
+@end
+
+@implementation MyClass 
+-(void)setFoo:(int)value {
+    _foo = foo * 2;
+}
+-(int)foo {
+    return _foo / 2;
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class MyClass { 
+    private var _foo:Int
+    var foo:Int {
+        get { 
+            return _foo / 2
+        }
+        set(value) { 
+            _foo = foo * 2
+        }
+    }
+
+    // `setFoo:` has moved as a setter.
+    // `foo` has moved as a getter.
+}
+</code></pre>
+
+</div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-74184843-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

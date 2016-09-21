@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objc2Swift.js - Document</title>
+<meta property="og:type" content="website"/>
+<meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+<meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+<meta property="og:title" content="Objc2Swift.js">
+<meta property="og:site_name" content="Objc2Swift.js">
+<meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+<script src="common.js"></script>
+<style>
+pre.diff {color:grey;}
+pre code {background-color:#f0f0f0;}
+.added {background-color:#c0f0c0;}
+.removed {text-decoration:line-through;color:red;}
+.stack-trace {font-size:80%;color:#666;}
+pre.output {display:none;}
+pre.expect {display:none;}
+pre.diff {display:block;}
+.tab-items {margin-top:1em;}
+.tab-items a {margin:0.25em;padding:0.25em;color:grey;cursor:pointer;}
+.tab-items a.selected {color:#007aff;border-bottom:2px solid #007aff;}
+</style>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="page-header">
+    <nav class="root-nav">
+      <ul>
+      <li><a href="../index.html">Home</a></li>
+        <li><a href="../demo.html">Live Demo</a></li>
+        <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
+      </ul>
+    </nav>
+</section>
+<div class="sidebar"><div class="menu"></div></div>
+<div class="content">
+
+
+<h1>Class </h1>
+<h2>Class method</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
++(int)method {
+    return 0;
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    class func method() -&gt; Int {
+        return 0
+    }
+}
+</code></pre>
+
+<h2>Instance method</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(int)method {
+    return 0;
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() -&gt; Int {
+        return 0
+    }
+}
+</code></pre>
+
+<h2>Method with params</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo 
+-(void)method:(int)arg1 label:(NSString *)arg2 {}
+-(void)method2:(int)arg1 :(NSString *)arg2 {}
+-(void)method3:(int)arg1 arg2:(NSString *)arg2 {}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo { 
+    func method(arg1:Int, label arg2:String!) {}
+    func method2(arg1:Int, arg2:String!) {}
+    func method3(arg1:Int, arg2:String!) {}
+}
+</code></pre>
+
+<h2>Override Completion</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@interface SuperFoo
+-(void)someMethod:(NSNumber *)arg;
+@end
+
+@interface Foo : SuperFoo
+-(void)someMethod:(NSNumber *)arg;
+@end
+
+@implementation Foo
+-(void)someMethod:(NSNumber *)arg {
+    // ...
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo : SuperFoo {
+    override func someMethod(arg:NSNumber!) {
+        // ...
+    }
+}
+</code></pre>
+
+<h2>Respect Interface declaration</h2>
+<p>If the signature of the method implementation is different from interface,
+the generated swift code follows interface declaration. Such patterns are mostly apparel with nullability specifiers.
+</p>
+
+<h3>Objective-C</h3><pre><code class='objc'>@interface Foo
+-(NSString * nonnull)method;
+@end
+
+@implementation Foo
+-(NSString *)method {
+    // ...
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() -&gt; String {
+        // ...
+    }
+}
+</code></pre>
+
+</div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-74184843-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objc2Swift.js - Document</title>
+<meta property="og:type" content="website"/>
+<meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+<meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+<meta property="og:title" content="Objc2Swift.js">
+<meta property="og:site_name" content="Objc2Swift.js">
+<meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+<script src="common.js"></script>
+<style>
+pre.diff {color:grey;}
+pre code {background-color:#f0f0f0;}
+.added {background-color:#c0f0c0;}
+.removed {text-decoration:line-through;color:red;}
+.stack-trace {font-size:80%;color:#666;}
+pre.output {display:none;}
+pre.expect {display:none;}
+pre.diff {display:block;}
+.tab-items {margin-top:1em;}
+.tab-items a {margin:0.25em;padding:0.25em;color:grey;cursor:pointer;}
+.tab-items a.selected {color:#007aff;border-bottom:2px solid #007aff;}
+</style>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="page-header">
+    <nav class="root-nav">
+      <ul>
+      <li><a href="../index.html">Home</a></li>
+        <li><a href="../demo.html">Live Demo</a></li>
+        <li class="selected">Document</li>
+        <li><a href="../online.html">Online Version</a></li>
+      </ul>
+    </nav>
+</section>
+<div class="sidebar"><div class="menu"></div></div>
+<div class="content">
+
+
+<h1>Statement</h1>
+<h2>If Statement</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(NSString *)method {
+    if(Condition) {
+        return @"OK";
+    } else {
+        return @"NG";
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() -&gt; String! {
+        if Condition {
+            return "OK"
+        } else {
+            return "NG"
+        }
+    }
+}
+</code></pre>
+
+<h2>Switch Statement</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(NSString *)method {
+    switch(Condition) {
+        case Apple:
+            return @"apple";
+        case Orange:
+            return @"orange";
+        default:
+            return @"else";    
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() -&gt; String! {
+        switch(Condition) { 
+            case Apple:
+                return "apple"
+            case Orange:
+                return "orange"
+            default:
+                return "else"    
+        }
+    }
+}
+</code></pre>
+
+<h2>Switch Statement (sequential cases)</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(NSString *)method {
+    switch(Condition) {
+        case Apple:
+        case Orange:
+            return @"fruit";
+        default:
+            return @"else";
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() -&gt; String! {
+        switch(Condition) { 
+            case Apple,
+                 Orange:
+                return "fruit"
+            default:
+                return "else"
+        }
+    }
+}
+</code></pre>
+
+<h2>For Statement</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(void)method {
+    for(int i=0;i&lt;100;i++) {
+        NSLog("%d",i);
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() {
+        for var i:Int=0 ; i&lt;100 ; i++ {  
+            NSLog("%d",i)
+         }
+    }
+}
+</code></pre>
+
+<h2>For-In Statement</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(void)method {
+    for(int bar in Foo) {
+        NSLog("%d",bar);
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() {
+        for bar:Int in Foo {  
+            NSLog("%d",bar)
+         }
+    }
+}
+</code></pre>
+
+<h2>While Statement</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(void)method {
+    while(flag) {
+        // Do Something
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() {
+        while flag {
+            // Do Something
+        }
+    }
+}
+</code></pre>
+
+<h2>Do-White Statement</h2>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(void)method {
+    do {
+        // Do Something
+    } while(flag);
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() {
+        repeat {
+            // Do Something
+        } while flag
+    }
+}
+</code></pre>
+
+<h2>Try-Catch Statment</h2>
+<p>Since Swift's try-catch statement has different semantics from Objective-C's, <code>@try</code>, <code>@catch</code> and <code>@finally</code> keywords are not be converted.
+</p>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(void)method {
+    @try {
+        // ...
+    }
+    @catch(Error *err) {
+    	// ...
+    }
+    @finally {
+    	// ...
+    }
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() {
+        @try {
+            // ...
+        }
+        @catch(err:Error!) {
+        	// ...
+        }
+        @finally {
+        	// ...
+        }
+    }
+}
+</code></pre>
+
+</div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-74184843-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

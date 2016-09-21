@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objc2Swift.js - Live Demo</title>
+  <meta property="og:type" content="website"/>
+  <meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+  <meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+  <meta property="og:title" content="Objc2Swift.js">
+  <meta property="og:site_name" content="Objc2Swift.js">
+  <meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+  <meta property="og:image" content="http://okaxaki.github.io/objc2swift/img/ogp.png">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/xcode.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/swift.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/theme-xcode.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/mode-objectivec.js"></script>
+  <script>var O2S;</script>
+  <script src="js/bundle.js"></script>
+  <script src="js/demo.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <section class="page-header">
+    <h1 class="project-name">Objc2Swift.js <a href="https://github.com/okaxaki/objc2swift" class="btn">View on GitHub</a> <a href="https://badge.fury.io/js/objc2swift"><img src="https://badge.fury.io/js/objc2swift.svg" alt="npm version" height="18"></a></h1>
+    <h2 class="project-tagline">An Objective-C to Swift converter written in Javascript.</h2>
+    <nav class="root-nav">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+        <li class="selected">Live Demo</li>
+        <li><a href="doc/index.html">Document</a></li>
+        <li><a href="online.html">Online Version</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="content">    
+    <h1>Live Demo</h1>
+    <p>
+    Choose a code sample from the menu, or type your code to the input box. Then press [Convert] to generate Swift code.<br>
+      You can also drag-and-drop your source file to the box.
+    </p>
+    <p class="note">Note: This demo NEVER send your code to the server. The conversion process is executed locally in your browser.</p>
+    <div class="demo clearfix">
+      <div class="source">
+        <div class="source-header clearfix">
+          <h3>Objective-C</h3>
+          <select id="source-selector">
+            <option value="./example/hello-world.m">Hello World</option>
+            <option value="./example/enumeration.m">Enumeration</option>
+            <option value="./example/computed-property.m">Computed Property</option>
+            <option value="./example/overriding.m">Overriding</option>
+            <option value="./example/initializer.m">Initializer</option>
+            <option value="./example/nullability.m">Nullability</option>
+            <option value="./example/protocol-confliction.m">Protocol Name Confliction</option>
+            <option value="./example/preprocess.m">Preprocessor Delective</option>
+          </select>
+        </div>
+        <div id="editor">@interface MyClass
+- (void)hello;
+@end
+
+@implementation MyClass
+- (void)hello {
+    NSLog(@"Hello the Swift World!");
+}
+@end</div>
+        <button id="convert">Convert</button>
+      </div>
+      <div class="result">
+        <h3>Swift</h3>
+        <pre><code id="result" class="swift" contenteditable spellcheck="false"></code></pre>
+      </div>
+    </div>
+    
+    <p class="note">The command-line version is also available for OS X. It is capable to analyze header files and provides more accurate conversion. See <a href="https://github.com/okaxaki/objc2swift" class="btn">GitHub Repository</a>.</p>
+
+    <footer>
+      <hr>
+      <p>Objc2Swift.js - Copyright &copy; 2016 Mitsutaka Okazaki. This site is powered by <a href="https://ace.c9.io/">Ace Editor</a>, <a href="https://highlightjs.org">highlight.js</a> and <a href="http://pegjs.org">PEG.js</a></p>
+    </footer>
+  </section>
+
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-74184843-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+    </body>
+    </html>

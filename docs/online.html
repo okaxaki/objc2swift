@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objc2Swift.js - Online Version</title>
+  <meta property="og:type" content="website"/>
+  <meta name="keywords" content="Objective-C, Swift, Converter, JavaScript">
+  <meta name="description" content="An Objective-C to Swift Converter written in JavaScript.">
+  <meta property="og:title" content="Objc2Swift.js">
+  <meta property="og:site_name" content="Objc2Swift.js">
+  <meta property="og:description" content="An Objective-C to Swift Converter written in JavaScript.">
+  <meta property="og:image" content="http://okaxaki.github.io/objc2swift/img/ogp.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/online.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/theme-xcode.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/mode-objectivec.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/mode-swift.js"></script>
+  <script>var O2S;</script>
+  <script src="js/bundle.js"></script>
+  <script src="js/online.js"></script>
+</head>
+
+<body>
+
+  <section class="content-wrap">
+    <div class="content clearfix">
+      <div class="left">
+        <h3>Objective-C</h3>
+        <div class="editor-wrap">
+          <div id="editor"></div>
+        </div>
+      </div>
+      <div class="right">
+        <h3>Swift</h3>
+        <div class="editor-wrap">
+          <div id="viewer"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-header">
+    <nav class="root-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="demo.html">Live Demo</a></li>
+        <li><a href="doc/index.html">Document</a></li>
+        <li class="selected">Online Version</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="page-footer">
+    <i class="material-icons">info</i> This page does not send your code to the server. The conversion process is executed locally in your browser.
+  </section>
+
+  <section class="toolbar">
+    <div class="left">
+      <input id="open-file" type="file" style="display:none;" />
+      <button style="float:left;" onclick="document.getElementById('open-file').click();"><i class="material-icons">folder_open</i> Open File</button>
+      <button id="open-url" style="float:left;"><i class="material-icons">public</i> Open from URL</button>
+      <button id="convert" style="float:right;"><i class="material-icons" style="color:green;">play_arrow</i> Run Convert</button>
+    </div>
+  </section>
+
+  <div id="modal-background"></div>
+  <div id="modal-stage">
+    <div id="open-url-dialog" class="dialog">
+      <h1>Enter Source URL</h1>
+      <p>You can specify Objctive-C source URL on GitHub or any site which allows cross-origin HTTP request <a href="https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS" target="_blank">[?]</a>.</p>
+      <input id="source-url" type="text" value="https://github.com/okaxaki/objc2swift/blob/gh-pages/example/hello-world.m">
+      <div class="button-box">
+        <button class="ok">OK</button>
+        <button class="cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
