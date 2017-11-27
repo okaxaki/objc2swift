@@ -4,14 +4,14 @@ var pegjs = require('./gulp/gulp-pegjs');
 var rename = require('gulp-rename');
 
 gulp.task('build-parser', function() {
-	return gulp.src('grammer/objc.pegjs')
+	return gulp.src('grammar/objc.pegjs')
 		.pipe(pegjs({trace:false,cache:true}))
 		.pipe(rename("parser.js"))
 		.pipe(gulp.dest('src'));
 });
 
 gulp.task('build-preprocess-parser', function() {
-	return gulp.src('grammer/preprocess.pegjs')
+	return gulp.src('grammar/preprocess.pegjs')
 		.pipe(pegjs({trace:false,cache:false}))
 		.pipe(rename("preprocess-parser.js"))
 		.pipe(gulp.dest('src'));
@@ -20,7 +20,7 @@ gulp.task('build-preprocess-parser', function() {
 gulp.task('build', ['build-parser','build-preprocess-parser']);
 
 gulp.task('build-trace', function() {
-	return gulp.src('grammer/objc.pegjs')
+	return gulp.src('grammar/objc.pegjs')
 		.pipe(pegjs({trace:true,cache:true}))
 		.pipe(rename("parser.js"))
 		.pipe(gulp.dest('src'));
