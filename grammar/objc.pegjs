@@ -855,12 +855,14 @@ EncodeExpression
 	}
 
 AvailableExpression
-	= AvailableToken __ '(' __ args:AttributeArgument __ ')' {
+	= AvailableToken __ '(' __ args:AttributeExpressionArgument __ ')' {
 		return {
 			type:"AvailableExpression",
 			args:args
 		};
 	}
+
+AttributeExpressionArgument = (!")" .)*
 
 //
 // Class
