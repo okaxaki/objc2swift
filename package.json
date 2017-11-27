@@ -3,6 +3,7 @@
   "version": "0.1.4",
   "description": "Objective-C to Swift Converter",
   "main": "src/main.js",
+  "files": ["bin", "src", "package.json", "LICENSE", "README.md"],
   "bin": {
     "objc2swift": "bin/cmd.js"
   },
