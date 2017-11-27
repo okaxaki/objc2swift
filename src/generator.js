@@ -913,7 +913,11 @@ module.exports = (function(){
 
 	Generator.prototype.EncodeExpression = function(node) {
 		return node.text;
-	}
+	};
+
+	Generator.prototype.AvailableExpression = function(node) {
+		return '#available(' + this.convert(node.args) + ')';
+	};
 
 	Generator.prototype.BlockExpression = function(node) {
 		var buf = [];

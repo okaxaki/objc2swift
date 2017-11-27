@@ -118,3 +118,29 @@ class Foo {
     }
 }
 ```
+
+## @available
+```
+@implementation MyClass
+-(void)test {
+    if(@available(iOS 10.0, *)) {
+        // >= iOS10
+    } else {
+        // <= iOS9
+    }
+}
+@end
+```
+
+```
+class MyClass {
+    func test() {
+        if #available(iOS 10.0, *) {
+            // >= iOS10
+        } else {
+            // <= iOS9
+        }
+    }
+}
+```
+

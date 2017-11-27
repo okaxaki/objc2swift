@@ -708,6 +708,7 @@ PrimaryExpression
 	/ SelectorExpression 
 	/ ProtocolExpression 
 	/ EncodeExpression 
+	/ AvailableExpression 
     / DictionaryExpression 
     / ArrayExpression 
     / BoxExpression 
@@ -850,6 +851,14 @@ EncodeExpression
 			type:"EncodeExpression",
 			arg:name,
 			text:text()
+		};
+	}
+
+AvailableExpression
+	= AvailableToken __ '(' __ args:AttributeArgument __ ')' {
+		return {
+			type:"AvailableExpression",
+			args:args
 		};
 	}
 
@@ -1729,6 +1738,7 @@ SelectorToken = $("@selector" !IdPart)
 ClassToken = $("@class" !IdPart)
 ProtocolToken = $("@protocol" !IdPart)
 EncodeToken = $("@encode" !IdPart)
+AvailableToken = $("@available" !IdPart)
 OptionalToken = $("@optional" !IdPart)
 
 TryToken = $("@try" !IdPart)

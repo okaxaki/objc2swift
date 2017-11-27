@@ -414,6 +414,10 @@ module.exports = (function(){
 		this.analyzeTypeChain(node, context, node.selector.name);
 	};
 
+	TypeAnalyzer.prototype.AvailableExpression = function(node) {
+		node._typeInfo = TypeInfo.Bool;
+	};
+
 	TypeAnalyzer.prototype.Constant = function(node) {
 		if(node.child.type == "FloatingPointLiteral") {
 			node._typeInfo = TypeInfo.Double;
