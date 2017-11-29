@@ -7,7 +7,7 @@ However, the most of Objective-C code can be converted to proper Swift code with
 
 ## Features
 
-- Generate good-looking Swift code from Objective-C code.
+- Generate good-looking Swift 2.1 code from Objective-C code.
 - Full Objective-C parser which accepts large source code, not for toy-problem.
 - Preserve indents and comments in the original Objective-C code.
 - Reduce compilation errors with semantics analysis. See the [Document](http://okaxaki.github.io/objc2swift/) for detail.
@@ -61,4 +61,12 @@ If you want to add user header search path permanently instead of `-I`, add the 
     ],
     "includePaths": []
 }
+```
+
+## How to Build
+```sh
+git clone https://github.com/okaxaki/objc2swift.git
+cd objc2swift
+npm install
+./node_modules/.bin/gulp build
 ```
