@@ -5,6 +5,8 @@ Objc2Swift.js is an Objective-C to Swift converter written in JavaScript. ([Live
 This project is still highly experimenal and does not aim to provide human-less conversion.
 However, the most of Objective-C code can be converted to proper Swift code with less compilation errors.
 
+Note: the author currently has no plan to support full features of Swift 3 or greater. 
+
 ## Features
 
 - Generate good-looking Swift 2.1 code from Objective-C code.
