@@ -225,6 +225,10 @@ module.exports = (function(){
 		return "//#import " + node.argument;
 	};
 
+	Generator.prototype.ModuleImportDirective = function(node) {
+		return "import " + node.argument.name;
+	}
+
 	Generator.prototype.FunctionDefinition = function(node) {	
 
 		var info = node._declInfo;
