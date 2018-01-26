@@ -131,6 +131,7 @@ TranslationUnit
 
 ExternalDeclaration 
 	= ImportDirective
+	/ ModuleImportDirective
 	/ IncludeDirective
 	/ Declaration
 	/ FunctionDefinition
@@ -162,6 +163,14 @@ ImportDirective
 	= '#' _ 'import' _ arg:( String / AngleString ) {
 		return {
 			type:"ImportDirective",
+			argument:arg
+		};
+	}
+
+ModuleImportDirective
+	= '@' _ 'import' _ arg:( Identifier ) _ ';' {
+		return {
+			type:"ModuleImportDirective",
 			argument:arg
 		};
 	}
