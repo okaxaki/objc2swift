@@ -1,6 +1,6 @@
 {
   "name": "objc2swift",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Objective-C to Swift Converter",
   "main": "src/main.js",
   "files": ["bin", "src", "package.json", "LICENSE", "README.md"],
