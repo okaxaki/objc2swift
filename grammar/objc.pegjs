@@ -168,7 +168,7 @@ ImportDirective
 	}
 
 ModuleImportDirective
-	= '@' _ 'import' _ arg:( Identifier ) _ ';' {
+	= ImportToken __ arg:( Identifier ) {
 		return {
 			type:"ModuleImportDirective",
 			argument:arg
@@ -1744,6 +1744,7 @@ PropertyToken = $("@property" !IdPart)
 SynthesizeToken = $("@synthesize" !IdPart)
 DynamicToken = $("@dynamic" !IdPart)
 RequiredToken = $("@required" !IdPart)
+ImportToken = $("@import" !IdPart)
 
 SelectorToken = $("@selector" !IdPart)
 ClassToken = $("@class" !IdPart)
