@@ -1,11 +1,11 @@
 /*
- * Objective-C Grammer for PEG.js
+ * Objective-C Grammar for PEG.js
  * ==============================
  *
- * If you would like to reuse this grammer, [pegjs-strip](https://github.com/okaxaki/pegjs-strip) 
- * may be useful. It can eliminate JavaScript-related things from the grammer.
+ * If you would like to reuse this grammar, [pegjs-strip](https://github.com/okaxaki/pegjs-strip) 
+ * may be useful. It can eliminate JavaScript-related things from the grammar.
  *
- * This grammer is based on ANTLR's C.g4 and ObjC.g4 with many fixes. Notable changes are:
+ * This grammar is based on ANTLR's C.g4 and ObjC.g4 with many fixes. Notable changes are:
  *
  * - Accept parameterized type like `NSObject<T>` as class and category name.
  * - Accept multi-time occurences of `@require` and `@optional` in ProtocolDeclaration.
@@ -17,7 +17,7 @@
  * - Support more type specifiers and qualifiers.
  * - Recognize some essential preprocessor delectives and macros defined in iOS and OSX sdks.
  * - Recognize `;` after `@end`.
- * - Refactor the structure of the grammer around type specifiers and qualifiers.
+ * - Refactor the structure of the grammar around type specifiers and qualifiers.
  * - Support `extern "C"` block.
  *
  */
@@ -26,10 +26,10 @@
 
   /**
    If `isTypeName` function is defined well,  the semantic predicate `!IsDeclarator` 
-   can be removed from the grammer. Seel also the `DeclarationSpecifiers` and
+   can be removed from the grammar. Seel also the `DeclarationSpecifiers` and
    `TypeIdentifier` rules.
 
-   C-style language can not be parsed with pure context-free grammers.
+   C-style language can not be parsed with pure context-free grammars.
    For example, if A is a defined type name, `A * B` is a declaration of B.
    But if A is other identifier, A * B is considered as Multiplicative of A and B. 
 
