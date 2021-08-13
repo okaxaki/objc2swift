@@ -1119,8 +1119,8 @@ StructOrUnionSpecifier
 	= h:(StructToken / UnionToken) __ e:StructOrUnionSpecifierEntity {
 		return {
 			type:"StructOrUnionSpecifier",
-			isUnion:h.token=="union",
-			name:e.name,
+			isUnion:h.indexOf("union")==0,
+			tagName:e.tagName,
 			c1:e.c1,
 			declarations:e.declarations,
 			c2:e.c2,

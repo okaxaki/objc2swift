@@ -64,7 +64,7 @@ module.exports = (function(){
 
 	Generator.prototype.toSwiftType = function(typeInfo) {
 
-		if(typeInfo.kind == TypeInfo.KIND_BASIC || typeInfo.kind == TypeInfo.KIND_CLASS) {
+		if(typeInfo.kind == TypeInfo.KIND_BASIC || typeInfo.kind == TypeInfo.KIND_CLASS || typeInfo.kind == TypeInfo.KIND_STRUCT) {
 
 			var name = OBJC_TO_SWIFT_TYPE_MAP[typeInfo.name]||typeInfo.name;
 			

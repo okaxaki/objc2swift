@@ -961,8 +961,8 @@ function peg$parse(input, options) {
       peg$c203 = function(h, e) {
       		return {
       			type:"StructOrUnionSpecifier",
-      			isUnion:h.token=="union",
-      			name:e.name,
+      			isUnion:h.indexOf("union")==0,
+      			tagName:e.tagName,
       			c1:e.c1,
       			declarations:e.declarations,
       			c2:e.c2,

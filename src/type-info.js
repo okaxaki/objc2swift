@@ -129,6 +129,7 @@ module.exports = (function(){
 	var _toStruct = function(typeInfo,structSpec) {
 		var result = new _clone(typeInfo);
 		result.kind = TypeInfo.KIND_STRUCT;
+		result.name = structSpec.tagName;
 		result.tagName = structSpec.tagName;
 		return result;
 	};
