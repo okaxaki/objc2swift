@@ -70,5 +70,5 @@ If you want to add user header search path permanently instead of `-I`, add the 
 git clone https://github.com/okaxaki/objc2swift.git
 cd objc2swift
 npm install
-./node_modules/.bin/gulp build
+npm run build
 ```

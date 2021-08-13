@@ -3,7 +3,13 @@
   "version": "0.1.6",
   "description": "Objective-C to Swift Converter",
   "main": "src/main.js",
-  "files": ["bin", "src", "package.json", "LICENSE", "README.md"],
+  "files": [
+    "bin",
+    "src",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "bin": {
     "objc2swift": "bin/cmd.js"
   },
@@ -13,19 +19,16 @@
     "node-getopt": "^0.2.3"
   },
   "devDependencies": {
-    "diff": "^2.2.1",
-    "gulp": "^3.9.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1",
-    "gulp-util": "^3.0.7",
-    "object-assign": "^4.0.1",
-    "open": "0.0.5",
+    "diff": "^5.0.0",
     "pegjs": "^0.10.0",
-    "through2": "^2.0.0",
-    "webpack-stream": "^3.1.0"
+    "webpack-cli": "^4.7.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-pp-parser": "pegjs -o ./src/preprocess-parser.js ./grammar/preprocess.pegjs",
+    "build-parser": "pegjs -o ./src/parser.js ./grammar/objc.pegjs",
+    "build": "npm run build-parser && npm run build-pp-parser",
+    "webpack": "webpack"
   },
   "keywords": [
     "pegjs",
