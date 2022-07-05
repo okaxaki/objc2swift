@@ -223,10 +223,12 @@ function peg$parse(input, options) {
       peg$c25 = function(m) { return m; },
       peg$c26 = ":",
       peg$c27 = peg$literalExpectation(":", false),
-      peg$c28 = function(id, stmt) {
+      peg$c28 = function(label, c1, c2, stmt) {
         	return {
         		type:"LabeledStatement",
-        		identifier:id,
+      		  c1: c1,
+        		label:label,
+      		  c2: c2,
         		statement:stmt,
         	};
         },
@@ -330,11 +332,12 @@ function peg$parse(input, options) {
       			condExpression:cond,			
       		}
       	},
-      peg$c40 = function(label, suffix) { 
+      peg$c40 = function(c1, label, c2) { 
         		return {
-        			type:"GotoStatement",
-        			label:identifier,
-        			suffix:suffix,
+        			type:"JumpStatement",
+      				c1:c1,
+        			label:label,
+        			c2:c2,
         		};
         	},
       peg$c41 = function(c1) { 
@@ -2535,7 +2538,7 @@ function peg$parse(input, options) {
             s5 = peg$parseStatement();
             if (s5 !== peg$FAILED) {
               peg$savedPos = s0;
-              s1 = peg$c28(s1, s5);
+              s1 = peg$c28(s1, s2, s4, s5);
               s0 = s1;
             } else {
               peg$currPos = s0;
@@ -3359,7 +3362,7 @@ function peg$parse(input, options) {
             }
             if (s5 !== peg$FAILED) {
               peg$savedPos = s0;
-              s1 = peg$c40(s3, s4);
+              s1 = peg$c40(s2, s3, s4);
               s0 = s1;
             } else {
               peg$currPos = s0;

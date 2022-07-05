@@ -231,10 +231,12 @@ ExpressionStatement
   = m:(Expression __) ';' { return m; }
 
 LabeledStatement
-  = id:Identifier __ ':' __ stmt:Statement {
+  = label:Identifier c1:__ ':' c2:__ stmt:Statement {
   	return {
   		type:"LabeledStatement",
-  		identifier:id,
+		  c1: c1,
+  		label:label,
+		  c2: c2,
   		statement:stmt,
   	};
   }
@@ -357,11 +359,12 @@ IterationStatement
   / ForInStatement
 
 JumpStatement
-  = GotoToken __ label:Identifier suffix:__ ';' { 
+  = GotoToken c1:__ label:Identifier c2:__ ';' { 
   		return {
-  			type:"GotoStatement",
-  			label:identifier,
-  			suffix:suffix,
+  			type:"JumpStatement",
+				c1:c1,
+  			label:label,
+  			c2:c2,
   		};
   	}
   / m:(ContinueToken __) ';' { return m; }
