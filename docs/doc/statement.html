@@ -223,6 +223,33 @@ pre.diff {display:block;}
 }
 </code></pre>
 
+<h2>Jump and Labeled Statement</h2>
+</p>
+<h3>Objective-C</h3><pre><code class='objc'>@implementation Foo
+-(void)method {
+    for(int i = 0; i &lt; 100; i++) {
+        if (i == 50) {
+            goto bar;
+        }
+    }
+    bar:
+        return;
+}
+@end
+</code></pre>
+<h3>Swift</h3><pre><code class='swift'>class Foo {
+    func method() {
+        for var i:Int=0 ; i &lt; 100 ; i++ {  
+            if i == 50 {
+                goto  bar
+            }
+         }
+        bar:
+            return
+    }
+}
+</code></pre>
+
 </div>
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

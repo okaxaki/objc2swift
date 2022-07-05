@@ -680,6 +680,14 @@ module.exports = (function(){
 		return this.convert(["return",node.c1,node.expression,node.c2]);
 	};
 
+	Generator.prototype.JumpStatement = function(node) {
+		return "goto " + this.convert([node.c1, node.label, node.c2]);
+	};
+
+	Generator.prototype.LabeledStatement = function(node) {
+		return this.convert([node.label, node.c1, ":", node.c2, node.statement]);
+	};
+
 	Generator.prototype.BreakStatement = function(node) {
 		return "break" + node.c1;
 	};

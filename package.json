@@ -1,6 +1,6 @@
 {
   "name": "objc2swift",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Objective-C to Swift Converter",
   "main": "src/main.js",
   "files": [
@@ -16,7 +16,7 @@
   "dependencies": {
     "fs-extra": "^0.26.5",
     "glob": "^6.0.4",
-    "node-getopt": "^0.2.3"
+    "node-getopt": "^0.3.2"
   },
   "devDependencies": {
     "diff": "^5.0.0",

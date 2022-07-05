@@ -200,4 +200,32 @@ class Foo {
 }
 ```
 
+## Jump and Labeled Statement
+</p>
+```
+@implementation Foo
+-(void)method {
+    for(int i = 0; i < 100; i++) {
+        if (i == 50) {
+            goto bar;
+        }
+    }
+    bar:
+        return;
+}
+@end
+```
+```
+class Foo {
+    func method() {
+        for var i:Int=0 ; i < 100 ; i++ {  
+            if i == 50 {
+                goto  bar
+            }
+         }
+        bar:
+            return
+    }
+}
+```
 
