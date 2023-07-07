@@ -10,7 +10,7 @@ var Objc2Swift = require('../src/main');
 var ImportResolver = require('../src/import-resolver');
 var Tracer = requireIfExist('pegjs-backtrace');
 
-if(process.platform != 'darwin') {
+if((process.platform != 'darwin') && (process.platform != 'linux')) {
 	console.error("`" + process.platform + "` platform is not supported.");
 	process.exit(1);
 }
