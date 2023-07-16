@@ -86,8 +86,7 @@ module.exports = (function() {
 		"__strftimelike":"", // _time.h
 		"__unavailable":"__attribute__((unavailable))",
 		"__unused":"__attribute__((deprecated))",
-		"__used":"__attribute__((used))",
-		
+		"__used":"__attribute__((used))",	
 		"NS_DURING":"@try {",
 		"NS_HANDLER":"} @catch (NSException * localException) {",
 		"NS_ENDHANDLER":"}",

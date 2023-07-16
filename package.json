@@ -1,6 +1,6 @@
 {
   "name": "objc2swift",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Objective-C to Swift Converter",
   "main": "src/main.js",
   "files": [
@@ -20,15 +20,19 @@
   },
   "devDependencies": {
     "diff": "^5.0.0",
+    "http-server": "^14.1.1",
     "pegjs": "^0.10.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^4.7.2"
+    "process": "^0.11.10",
+    "util": "^0.12.5",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-pp-parser": "pegjs -o ./src/preprocess-parser.js ./grammar/preprocess.pegjs",
     "build-parser": "pegjs -o ./src/parser.js ./grammar/objc.pegjs",
     "build": "npm run build-parser && npm run build-pp-parser",
+    "server": "http-server -c 0 -o ./docs",
     "webpack": "webpack"
   },
   "keywords": [
@@ -46,6 +50,6 @@
   "author": "Mitsutaka Okazaki",
   "license": "ISC",
   "engines": {
-    "node": ">= 4.2.0"
+    "node": ">=10.0.0"
   }
 }
